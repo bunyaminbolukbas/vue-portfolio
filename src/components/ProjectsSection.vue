@@ -21,7 +21,7 @@ const projects = [
       'A weather dashboard built with Vue.js frontend and a Flask backend. Demonstrates fullstack API integration, responsiveness and user-friendly UI.',
     image: '/placeholder.svg',
     link: 'https://github.com/Bunyamin-1058754/React-Weather-webapp',
-    tags: ['Vue', 'Flask', 'TailwindCSS', 'Vite', 'API'],
+    tags: ['React', 'Flask', 'Python', 'Vite', 'API'],
   },
   {
     title: 'n8n Crypto Wallet',
@@ -29,7 +29,7 @@ const projects = [
       'An automated crypto wallet manager built using n8n, integrating blockchain API workflows for transaction monitoring and control.',
     image: '/placeholder.svg',
     link: 'https://github.com/Bunyamin-1058754/n8n-Crypto-Wallet',
-    tags: ['n8n', 'JavaScript', 'Automation', 'Webhooks'],
+    tags: ['n8n', 'Typescript', 'Automation', 'Webhooks'],
   },
   {
     title: 'Erasmus Crane Simulation',
@@ -37,7 +37,7 @@ const projects = [
       'A Python-based crane simulator developed in collaboration with Erasmus University to demonstrate mechanical and physics-based movement logic.',
     image: '/placeholder.svg',
     link: 'https://github.com/Bunyamin-1058754/kraansimulatie-project', // ← voeg hier je echte link in als je die hebt
-    tags: ['Python', 'Simulation', 'Erasmus', 'Education'],
+    tags: ['Python', 'Firebase', 'MQTT', 'C#'],
   },
 ]
 </script>
