@@ -5,7 +5,7 @@
     <div class="container mx-auto flex h-14 items-center justify-between px-4">
       <!-- Linkerkant -->
       <div class="flex items-center space-x-8">
-        <div class="font-bold text-lg">Bunyamin.dev</div>
+        <div class="font-bold text-lg">Bünyamin Bölükbas</div>
         <nav class="hidden md:flex space-x-6 text-sm font-medium">
           <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition">About</a>
           <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition"

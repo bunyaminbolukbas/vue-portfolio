@@ -16,26 +16,28 @@ import ProjectCard from './ProjectCard.vue'
 
 const projects = [
   {
-    title: 'E-commerce Platform',
+    title: 'Fullstack Weather App',
     description:
-      'A full-stack e-commerce platform built with Next.js, Prisma, and Stripe integration.',
+      'A weather dashboard built with Vue.js frontend and a Flask backend. Demonstrates fullstack API integration, responsiveness and user-friendly UI.',
     image: '/placeholder.svg',
-    link: 'https://github.com',
-    tags: ['Next.js', 'Prisma', 'Stripe'],
+    link: 'https://github.com/Bunyamin-1058754/React-Weather-webapp',
+    tags: ['Vue', 'Flask', 'TailwindCSS', 'Vite', 'API'],
   },
   {
-    title: 'Task Management App',
-    description: 'A real-time task management application with team collaboration features.',
+    title: 'n8n Crypto Wallet',
+    description:
+      'An automated crypto wallet manager built using n8n, integrating blockchain API workflows for transaction monitoring and control.',
     image: '/placeholder.svg',
-    link: 'https://github.com',
-    tags: ['React', 'Node.js', 'Socket.io'],
+    link: 'https://github.com/Bunyamin-1058754/n8n-Crypto-Wallet',
+    tags: ['n8n', 'JavaScript', 'Automation', 'Webhooks'],
   },
   {
-    title: 'AI Chat Interface',
-    description: 'An AI-powered chat interface with natural language processing capabilities.',
+    title: 'Erasmus Crane Simulation',
+    description:
+      'A Python-based crane simulator developed in collaboration with Erasmus University to demonstrate mechanical and physics-based movement logic.',
     image: '/placeholder.svg',
-    link: 'https://github.com',
-    tags: ['OpenAI', 'Next.js', 'TailwindCSS'],
+    link: 'https://github.com/Bunyamin-1058754/kraansimulatie-project', // ← voeg hier je echte link in als je die hebt
+    tags: ['Python', 'Simulation', 'Erasmus', 'Education'],
   },
 ]
 </script>

@@ -1,3 +1,7 @@
+<script setup>
+import { Github, Linkedin, Twitter, Mail } from 'lucide-vue-next'
+</script>
+
 <template>
   <section
     class="flex flex-col items-center justify-center text-center py-24 px-4 bg-white text-black dark:bg-black dark:text-white transition-colors duration-300"
@@ -14,30 +18,28 @@
         target="_blank"
         class="border p-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"
       >
-        🐙
+        <Github class="w-5 h-5" />
       </a>
       <a
         href="https://www.linkedin.com/in/bunyaminbolukbas/"
         target="_blank"
         class="border p-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"
       >
-        💼
+        <Linkedin class="w-5 h-5" />
       </a>
       <a
         href="https://twitter.com"
         target="_blank"
         class="border p-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"
       >
-        🐦
+        <Twitter class="w-5 h-5" />
       </a>
       <a
         href="mailto:hello@example.com"
         class="border p-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"
       >
-        ✉️
+        <Mail class="w-5 h-5" />
       </a>
     </div>
   </section>
 </template>
-
-<script setup></script>
