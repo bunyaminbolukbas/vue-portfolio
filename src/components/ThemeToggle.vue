@@ -19,5 +19,6 @@ onMounted(() => {
 function toggleTheme() {
   isDark.value = !isDark.value
   document.documentElement.classList.toggle('dark', isDark.value)
+  console.log('CURRENT CLASSES:', document.documentElement.classList.value)
 }
 </script>

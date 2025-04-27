@@ -1,12 +1,14 @@
 <template>
-  <footer class="border-t py-6 px-4">
+  <footer class="border-t bg-white dark:bg-black py-6 px-4 transition-colors duration-300">
     <div
-      class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between text-sm text-gray-500"
+      class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between text-sm text-gray-500 dark:text-gray-400"
     >
       <p>© 2025 Bunyamin.dev. All rights reserved.</p>
       <nav class="flex gap-4 mt-2 sm:mt-0">
-        <a href="#" class="hover:underline">Terms of Service</a>
-        <a href="#" class="hover:underline">Privacy</a>
+        <a href="#" class="hover:underline hover:text-black dark:hover:text-white"
+          >Terms of Service</a
+        >
+        <a href="#" class="hover:underline hover:text-black dark:hover:text-white">Privacy</a>
       </nav>
     </div>
   </footer>

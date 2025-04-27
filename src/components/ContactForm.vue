@@ -1,8 +1,13 @@
 <template>
-  <section id="contact" class="py-16 px-4">
+  <section
+    id="contact"
+    class="py-16 px-4 bg-white dark:bg-black text-black dark:text-white transition-colors duration-300"
+  >
     <h2 class="text-4xl font-bold text-center mb-8">Get in Touch</h2>
 
-    <div class="max-w-2xl mx-auto bg-white rounded-xl shadow p-6">
+    <div
+      class="max-w-2xl mx-auto bg-white dark:bg-gray-900 rounded-xl shadow p-6 transition-colors duration-300"
+    >
       <form @submit.prevent="handleSubmit" class="space-y-6">
         <div>
           <label for="name" class="block text-sm font-medium mb-2">Name</label>
@@ -12,7 +17,7 @@
             id="name"
             name="name"
             required
-            class="w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-black"
+            class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition"
           />
         </div>
 
@@ -24,7 +29,7 @@
             id="email"
             name="email"
             required
-            class="w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-black"
+            class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition"
           />
         </div>
 
@@ -36,19 +41,19 @@
             name="message"
             rows="5"
             required
-            class="w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-black"
+            class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition"
           ></textarea>
         </div>
 
         <button
           type="submit"
           :disabled="pending"
-          class="w-full bg-black text-white py-2 rounded-md font-semibold hover:bg-gray-900 transition"
+          class="w-full bg-black text-white dark:bg-white dark:text-black py-2 rounded-md font-semibold hover:bg-gray-900 dark:hover:bg-gray-200 transition"
         >
           {{ pending ? 'Sending...' : 'Send Message' }}
         </button>
 
-        <p v-if="message" class="text-center text-green-600 font-medium mt-4">
+        <p v-if="message" class="text-center text-green-600 dark:text-green-400 font-medium mt-4">
           {{ message }}
         </p>
       </form>
@@ -66,7 +71,7 @@ const form = ref({
 })
 const pending = ref(false)
 const message = ref('')
-const endpoint = 'https://formspree.io/f/mnndnple' // Replace this with your real Formspree link
+const endpoint = 'https://formspree.io/f/mnndnple' // endpoint for Formspree
 
 async function handleSubmit() {
   pending.value = true
