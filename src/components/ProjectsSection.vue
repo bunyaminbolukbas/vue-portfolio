@@ -13,6 +13,7 @@
 
 <script setup>
 import ProjectCard from './ProjectCard.vue'
+import walletimg from '@/assets/images/n8n.png'
 
 const projects = [
   {
@@ -27,7 +28,7 @@ const projects = [
     title: 'n8n Crypto Wallet',
     description:
       'An automated crypto wallet manager built using n8n, integrating blockchain API workflows for transaction monitoring and control.',
-    image: '/placeholder.svg',
+    image: walletimg,
     link: 'https://github.com/Bunyamin-1058754/n8n-Crypto-Wallet',
     tags: ['n8n', 'Typescript', 'Automation', 'Webhooks'],
   },
