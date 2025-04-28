@@ -14,13 +14,13 @@
 <script setup>
 import ProjectCard from './ProjectCard.vue'
 import walletimg from '@/assets/images/n8n.png'
-
+import iphoneimg from '@/assets/images/iphoneimg.png'
 const projects = [
   {
     title: 'Fullstack Weather App',
     description:
-      'A weather dashboard built with Vue.js frontend and a Flask backend. Demonstrates fullstack API integration, responsiveness and user-friendly UI.',
-    image: '/placeholder.svg',
+      'A weather dashboard built with React.js frontend and a Python backend. Demonstrates fullstack API integration, responsiveness and user-friendly UI.',
+    image: iphoneimg,
     link: 'https://github.com/Bunyamin-1058754/React-Weather-webapp',
     tags: ['React', 'Flask', 'Python', 'Vite', 'API'],
   },
@@ -33,9 +33,9 @@ const projects = [
     tags: ['n8n', 'Typescript', 'Automation', 'Webhooks'],
   },
   {
-    title: 'Erasmus Crane Simulation',
+    title: 'Crane Simulation',
     description:
-      'A Python-based crane simulator developed in collaboration with Erasmus University to demonstrate mechanical and physics-based movement logic.',
+      'A Python-based crane simulator developed in collaboration with Eye-Concept Industrial Automation B.V. to demonstrate mechanical and physics-based movement logic.',
     image: '/placeholder.svg',
     link: 'https://github.com/Bunyamin-1058754/kraansimulatie-project', // ← voeg hier je echte link in als je die hebt
     tags: ['Python', 'Firebase', 'MQTT', 'C#'],
