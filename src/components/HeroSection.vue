@@ -35,7 +35,7 @@ import { Github, Linkedin, Twitter, Mail } from 'lucide-vue-next'
         <Twitter class="w-5 h-5" />
       </a>
       <a
-        href="mailto:hello@example.com"
+        href="mailto:bbe-operations@outlook.com"
         class="border p-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"
       >
         <Mail class="w-5 h-5" />
