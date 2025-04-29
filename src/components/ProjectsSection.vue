@@ -38,7 +38,7 @@ const projects = [
     description:
       'A Python-based crane simulator developed in collaboration with Eye-Concept Industrial Automation B.V. to demonstrate mechanical and physics-based movement logic.',
     image: craneimg,
-    link: 'https://github.com/Bunyamin-1058754/kraansimulatie-project', // ← voeg hier je echte link in als je die hebt
+    link: 'https://github.com/Bunyamin-1058754/Crane-Simulation-Tool', //
     tags: ['Python', 'Firebase', 'MQTT', 'C#'],
   },
 ]
