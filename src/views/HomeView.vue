@@ -6,10 +6,12 @@ import ProjectsSection from '../components/ProjectsSection.vue'
 import TechStack from '../components/TechStack.vue'
 import ContactForm from '../components/ContactForm.vue'
 import FooterSection from '../components/FooterSection.vue'
+import ParticleBackground from '../components/ParticleBackground.vue'
 </script>
 
 <template>
   <div>
+    <ParticleBackground />
     <MainNavbar />
     <HeroSection />
     <AboutSection />
