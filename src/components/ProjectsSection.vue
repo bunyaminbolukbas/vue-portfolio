@@ -23,7 +23,7 @@ const projects = [
       'A weather dashboard built with React.js frontend and a Python backend. Demonstrates fullstack API integration, responsiveness and user-friendly UI.',
     image: iphoneimg,
     link: 'https://github.com/Bunyamin-1058754/React-Weather-webapp',
-    tags: ['React', 'Flask', 'Python', 'Vite', 'API'],
+    tags: ['React', 'Python', 'Flask', 'Vite', 'OpenAPI', 'SQLite3'],
   },
   {
     title: 'n8n Crypto Wallet',
@@ -39,7 +39,7 @@ const projects = [
       'A Python-based crane simulator developed in collaboration with Eye-Concept Industrial Automation B.V. to demonstrate mechanical and physics-based movement logic.',
     image: craneimg,
     link: 'https://github.com/Bunyamin-1058754/Crane-Simulation-Tool', //
-    tags: ['Python', 'Firebase', 'MQTT', 'C#'],
+    tags: ['Python', 'C#', 'MQTT', 'Unity', 'Simulation'],
   },
 ]
 </script>

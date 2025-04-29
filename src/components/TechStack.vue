@@ -34,15 +34,15 @@ const technologies = [
   },
   {
     category: 'Backend',
-    skills: ['Node.js', 'Express', 'Python', 'Flask', 'SQL'],
+    skills: ['Python', 'Node.js', 'Python', 'Flask', 'SQL'],
   },
   {
     category: 'DevOps',
-    skills: ['Docker', 'GitHub Actions', 'Linux', 'CI/CD'],
+    skills: ['Docker', 'GitHub Actions', 'Linux', 'Kubernetes'],
   },
   {
     category: 'Tools',
-    skills: ['VS Code', 'Figma', 'Postman', 'Jest', 'Vercel'],
+    skills: ['VS Code', 'ChatGPT', 'Postman', 'Jest', 'Vercel'],
   },
 ]
 </script>
