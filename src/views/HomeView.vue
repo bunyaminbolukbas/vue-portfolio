@@ -10,8 +10,9 @@ import ParticleBackground from '../components/ParticleBackground.vue'
 </script>
 
 <template>
-  <div>
+  <div class="relative">
     <ParticleBackground />
+
     <MainNavbar />
     <HeroSection />
     <AboutSection />
