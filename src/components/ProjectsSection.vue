@@ -3,7 +3,7 @@
     id="projects"
     class="py-16 px-4 bg-white text-black dark:bg-black dark:text-white transition-colors duration-300"
   >
-    <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
+    <h2 class="text-3xl font-bold text-center mb-12">Projects.</h2>
 
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       <ProjectCard v-for="project in projects" :key="project.title" v-bind="project" />

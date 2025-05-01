@@ -3,7 +3,7 @@
     id="tech"
     class="py-16 px-4 bg-white text-black dark:bg-black dark:text-white transition-colors duration-300"
   >
-    <h2 class="text-3xl font-bold text-center mb-12">Tech Stack</h2>
+    <h2 class="text-3xl font-bold text-center mb-12">Tech Stack.</h2>
 
     <div class="grid gap-6 md:grid-cols-2">
       <div
@@ -30,19 +30,19 @@
 const technologies = [
   {
     category: 'Frontend',
-    skills: ['Vue', 'TailwindCSS', 'React', 'TypeScript', 'Vite'],
+    skills: ['Vue', 'TailwindCSS', 'React', 'TypeScript', 'JavaScript', 'HTML', 'CSS'],
   },
   {
     category: 'Backend',
-    skills: ['Python', 'Node.js', 'Python', 'Flask', 'SQL'],
+    skills: ['Python', 'Node.js', 'Python', 'Flask', 'SQL', 'SQLite3', 'PostgreSQL'],
   },
   {
     category: 'DevOps',
-    skills: ['Docker', 'GitHub Actions', 'Linux', 'Kubernetes'],
+    skills: ['Docker', 'Netlify', 'Linux', 'Kubernetes', 'Git', 'GitHub', 'CI/CD'],
   },
   {
     category: 'Tools',
-    skills: ['VS Code', 'ChatGPT', 'Postman', 'Jest', 'Vercel'],
+    skills: ['Vite', 'AI', 'Postman', 'Jest', 'Vercel ', 'n8n', 'MQTT'],
   },
 ]
 </script>
