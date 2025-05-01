@@ -6,8 +6,8 @@
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
       <!-- Contact Info -->
       <div>
-        <h2 class="text-4xl font-bold mb-4">Contact.</h2>
-        <p class="text-lg text-gray-700 dark:text-gray-300 mb-10">
+        <h2 class="text-3xl font-bold mb-4">Contact.</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-10">
           I'd be happy to connect! Feel free to reach out for project inquiries, collaboration
           opportunities, or any other questions you may have.
         </p>
