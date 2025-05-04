@@ -1,0 +1,24 @@
+# Redirect all requests to bunyaminbolukbas.com
+[[redirects]]
+from = "https://bunyaminbolukbas.netlify.app/*"
+to = "https://bunyaminbolukbas.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.bunyaminbolukbas.com/*"
+to = "https://bunyaminbolukbas.com/:splat"
+status = 301
+force = true
+
+# Pages
+[[redirects]]
+from = "/"
+to = "/index.html"
+status = 200
+
+# 404
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 404
