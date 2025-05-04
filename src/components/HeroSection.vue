@@ -16,7 +16,7 @@ import { Github, Linkedin, Mail } from 'lucide-vue-next'
 
       <div class="flex space-x-4">
         <a
-          href="https://github.com/Bunyamin-1058754"
+          href="https://github.com/bunyaminbolukbas"
           target="_blank"
           class="border border-white p-3 rounded-full hover:bg-white hover:text-black transition"
         >

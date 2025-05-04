@@ -54,11 +54,11 @@
             <div>
               <h3 class="font-semibold text-lg">GitHub</h3>
               <a
-                href="https://github.com/Bunyamin-1058754"
+                href="https://github.com/bunyaminbolukbas"
                 target="_blank"
                 class="text-gray-700 dark:text-gray-300"
               >
-                @Bunyamin-1058754
+                @bunyaminbolukbas
               </a>
             </div>
           </li>
