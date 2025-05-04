@@ -5,6 +5,12 @@ to = "https://bunyaminbolukbas.com/:splat"
 status = 301
 force = true
 
+# Default favicon redirect
+[[redirects]]
+from = "/favicon.ico"
+to = "https://bunyaminbolukbas.com/favicon.png"
+status = 301
+
 [[redirects]]
 from = "https://www.bunyaminbolukbas.com/*"
 to = "https://bunyaminbolukbas.com/:splat"
