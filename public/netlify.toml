@@ -5,6 +5,17 @@ to = "https://bunyaminbolukbas.com/:splat"
 status = 301
 force = true
 
+# Simple Analytics proxy - https://docs.simpleanalytics.com/proxy
+[[redirects]]
+from = "/proxy.js"
+to = "https://simpleanalyticsexternal.com/proxy.js?hostname=bunyaminbolukbas.com&path=/simple"
+status = 200
+
+[[redirects]]
+from = "/simple/*"
+to = "https://queue.simpleanalyticscdn.com/:splat"
+status = 200
+
 # Default favicon redirect
 [[redirects]]
 from = "/favicon.ico"
@@ -28,3 +39,4 @@ status = 200
 from = "/*"
 to = "/index.html"
 status = 404
+
