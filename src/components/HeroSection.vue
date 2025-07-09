@@ -13,17 +13,11 @@
       <!-- Main Content -->
       <div class="animate-fade-in-up">
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight px-4">
-          Hi, I'm 
-          <span class="text-gradient bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Bünyamin
-          </span>
-        </h1>
-        
-        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-8 text-gray-300 px-4">
+        <h2 class="text-xl md:text-3xl lg:text-4xl font-semibold mb-8 text-gray-300 px-4">
           Frontend Web Developer
         </h2>
         
-        <p class="text-gray-400 text-base sm:text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed px-4">
+        <p class="text-gray-400 text-base md:text-lg lg:text-xl mb-12 max-w-2xl mx-auto leading-relaxed px-4">
           Not your average developer — I specialize in building modern, responsive web applications. 
           With a background in law and sales, I bring a unique perspective to everything I build.
         </p>
