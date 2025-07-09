@@ -13,6 +13,7 @@
       <!-- Main Content -->
       <div class="animate-fade-in-up">
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight px-4">
+        </h1>
         <h2 class="text-xl md:text-3xl lg:text-4xl font-semibold mb-8 text-gray-300 px-4">
           Frontend Web Developer
         </h2>
