@@ -1,88 +1,104 @@
 <template>
-  <section
-    id="home"
-    class="relative flex items-center justify-center min-h-screen px-4 bg-animated-dark overflow-hidden"
+  <header
+    class="fixed top-0 z-50 w-full transition-all duration-300"
+    :class="[
+      scrolled 
+        ? 'bg-white/90 dark:bg-black/90 backdrop-blur-md shadow-lg border-b border-gray-200/50 dark:border-gray-700/50' 
+        : 'bg-transparent'
+    ]"
   >
-    <!-- Background Elements -->
-    <div class="absolute inset-0">
-      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-2xl"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-full blur-2xl"></div>
+    <div class="container mx-auto flex h-16 items-center justify-between px-6">
+      <!-- Logo/Name -->
+      <div class="font-bold text-xl tracking-tight text-gradient animate-fade-in-left">
+        Bünyamin Bölükbaş
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8 text-sm font-medium animate-fade-in-right">
+        <a 
+          v-for="item in navItems" 
+          :key="item.href"
+          :href="item.href" 
+          class="relative text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 group"
+        >
+          {{ item.label }}
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button 
+        @click="toggleMobileMenu"
+        class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+      >
+        <div class="w-6 h-6 flex flex-col justify-center items-center">
+          <span 
+            class="w-5 h-0.5 bg-current transition-all duration-300"
+            :class="mobileMenuOpen ? 'rotate-45 translate-y-0.5' : ''"
+          ></span>
+          <span 
+            class="w-5 h-0.5 bg-current mt-1 transition-all duration-300"
+            :class="mobileMenuOpen ? 'opacity-0' : ''"
+          ></span>
+          <span 
+            class="w-5 h-0.5 bg-current mt-1 transition-all duration-300"
+            :class="mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''"
+          ></span>
+        </div>
+      </button>
     </div>
 
-    <div class="relative z-10 max-w-4xl mx-auto text-center">
-      <!-- Main Content -->
-      <div class="animate-fade-in-up">
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight px-4">
-        <h2 class="text-xl md:text-3xl lg:text-4xl font-semibold mb-8 text-gray-300 px-4">
-          Frontend Web Developer
-        </h2>
-        
-        <p class="text-gray-400 text-base md:text-lg lg:text-xl mb-12 max-w-2xl mx-auto leading-relaxed px-4">
+    <!-- Mobile Menu -->
+    <div 
+      class="md:hidden transition-all duration-300 overflow-hidden"
+      :class="mobileMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'"
+    >
+      <nav class="px-6 py-4 bg-white/95 dark:bg-black/95 backdrop-blur-md border-t border-gray-200/50 dark:border-gray-700/50">
+        <a 
+          v-for="item in navItems" 
+          :key="item.href"
+          :href="item.href" 
+          @click="closeMobileMenu"
           class="block py-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors border-b border-gray-200/30 dark:border-gray-700/30 last:border-b-0"
-          Not your average developer — I specialize in building modern, responsive web applications. 
-          With a background in law and sales, I bring a unique perspective to everything I build.
-        </p>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 px-4">
-          <a
-            href="#projects"
-            class="btn-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full text-white font-semibold hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center gap-2"
-          >
-            View My Work
-            <ArrowDown class="w-5 h-5" />
-          </a>
-          <a
-            href="#contact"
-            class="px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-white/30 text-white font-semibold hover:bg-white/10 hover:border-white/50 transition-all duration-300 inline-flex items-center justify-center gap-2"
-          >
-            Get In Touch
-            <Mail class="w-5 h-5" />
-          </a>
-        </div>
-
-        <!-- Social Links -->
-        <div class="flex justify-center space-x-4 sm:space-x-6 px-4">
-          <a
-            v-for="social in socialLinks"
-            :key="social.name"
-            :href="social.url"
-            target="_blank"
-            class="group p-3 sm:p-4 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/10 transition-all duration-300 hover:scale-110"
-          >
-            <component :is="social.icon" class="w-5 h-5 sm:w-6 sm:h-6 text-white/70 group-hover:text-white transition-colors" />
-          </a>
-        </div>
-      </div>
-
-      <!-- Scroll Indicator -->
-      <div class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div class="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
-        </div>
-      </div>
+        >
+          {{ item.label }}
+        </a>
+      </nav>
     </div>
-  </section>
+  </header>
 </template>
 
 <script setup>
-import { Github, Linkedin, Mail, ArrowDown } from 'lucide-vue-next'
+import { ref, onMounted, onUnmounted } from 'vue'
 
-const socialLinks = [
-  {
-    name: 'GitHub',
-    url: 'https://github.com/bunyaminbolukbas',
-    icon: Github
-  },
-  {
-    name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/bunyaminbolukbas/',
-    icon: Linkedin
-  },
-  {
-    name: 'Email',
-    url: 'mailto:bbe-operations@outlook.com',
-    icon: Mail
-  }
+const scrolled = ref(false)
+const mobileMenuOpen = ref(false)
+
+const navItems = [
+  { href: '#home', label: 'Home' },
+  { href: '#about', label: 'About' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#tech', label: 'Skills' },
+  { href: '#contact', label: 'Contact' }
 ]
+
+const handleScroll = () => {
+  scrolled.value = window.scrollY > 50
+}
+
+const toggleMobileMenu = () => {
+  mobileMenuOpen.value = !mobileMenuOpen.value
+}
+
+const closeMobileMenu = () => {
+  mobileMenuOpen.value = false
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
