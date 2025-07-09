@@ -1,76 +1,63 @@
 <template>
-  <section id="about" class="py-24 px-4 bg-gray-50 dark:bg-zinc-900 transition-colors duration-300">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-black dark:text-white">
-          About <span class="text-gradient">Me</span>
-        </h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
-      </div>
+  <section
+    id="home"
+    class="relative flex items-center justify-center min-h-screen px-4 bg-animated-dark overflow-hidden"
+  >
+    <!-- Background Elements -->
+    <div class="absolute inset-0">
+      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-2xl"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-full blur-2xl"></div>
+    </div>
 
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <!-- Profile Image -->
-        <div class="flex justify-center lg:justify-start">
-          <div class="relative group">
-            <div class="absolute -inset-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
-            <img
-              :src="profileImg"
-              alt="Photo of Bunyamin"
-              class="relative w-80 h-80 rounded-full object-top object-cover shadow-2xl hover:scale-105 transition-transform duration-300"
-            />
-            <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
-              <Code class="w-12 h-12 text-white" />
-            </div>
-          </div>
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <!-- Main Content -->
+      <div class="animate-fade-in-up">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight px-4">
+        <h2 class="text-xl md:text-3xl lg:text-4xl font-semibold mb-8 text-gray-300 px-4">
+          Frontend Web Developer
+        </h2>
+        
+        <p class="text-gray-400 text-base md:text-lg lg:text-xl mb-12 max-w-2xl mx-auto leading-relaxed px-4">
+          Not your average developer — I specialize in building modern, responsive web applications. 
+          With a background in law and sales, I bring a unique perspective to everything I build.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 px-4">
+          <a
+            href="#projects"
+            class="btn-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full text-white font-semibold hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center gap-2"
+          >
+            View My Work
+            <ArrowDown class="w-5 h-5" />
+          </a>
+          <a
+            href="#contact"
+            class="px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-white/30 text-white font-semibold hover:bg-white/10 hover:border-white/50 transition-all duration-300 inline-flex items-center justify-center gap-2"
+          >
+            Get In Touch
+            <Mail class="w-5 h-5" />
+          </a>
         </div>
 
-        <!-- Content -->
-        <div class="space-y-8">
-          <div class="space-y-6 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-            <p class="animate-fade-in-up">
-              Hey there! I'm <span class="font-semibold text-black dark:text-white">Bunyamin</span> — 
-              I specialize in frontend development with Vue, React, and TypeScript, but I'm also confident 
-              working with backend tools like Python, Flask, and Node.js.
-            </p>
+        <!-- Social Links -->
+        <div class="flex justify-center space-x-4 sm:space-x-6 px-4">
+          <a
+            v-for="social in socialLinks"
+            :key="social.name"
+            :href="social.url"
+            target="_blank"
+            class="group p-3 sm:p-4 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/10 transition-all duration-300 hover:scale-110"
+          >
+            <component :is="social.icon" class="w-5 h-5 sm:w-6 sm:h-6 text-white/70 group-hover:text-white transition-colors" />
+          </a>
+        </div>
+      </div>
 
-            <p class="animate-fade-in-up" style="animation-delay: 0.2s;">
-              With a background in law and sales, I bring a unique mix of analytical thinking and 
-              communication skills to my work. I'm passionate about building modern, secure, and 
-              user-focused applications — especially when it comes to solving real-world problems.
-            </p>
-
-            <p class="animate-fade-in-up" style="animation-delay: 0.4s;">
-              I'm currently open to new opportunities, so if you're hiring or want to collaborate, 
-              shoot me a message!
-            </p>
-          </div>
-
-          <!-- Stats -->
-          <div class="grid grid-cols-3 gap-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-            <div class="text-center">
-              <div class="text-3xl font-bold text-gradient mb-2">3+</div>
-              <div class="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
-            </div>
-            <div class="text-center">
-              <div class="text-3xl font-bold text-gradient mb-2">15+</div>
-              <div class="text-sm text-gray-600 dark:text-gray-400">Projects Completed</div>
-            </div>
-            <div class="text-center">
-              <div class="text-3xl font-bold text-gradient mb-2">100%</div>
-              <div class="text-sm text-gray-600 dark:text-gray-400">Client Satisfaction</div>
-            </div>
-          </div>
-
-          <!-- Skills Preview -->
-          <div class="flex flex-wrap gap-3 pt-6">
-            <span 
-              v-for="skill in topSkills" 
-              :key="skill"
-              class="px-4 py-2 bg-gradient-to-r from-blue-600/10 to-purple-600/10 border border-blue-600/20 rounded-full text-sm font-medium text-blue-700 dark:text-blue-300 hover:scale-105 transition-transform duration-200"
-            >
-              {{ skill }}
-            </span>
-          </div>
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+          <div class="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </div>
@@ -78,8 +65,23 @@
 </template>
 
 <script setup>
-import { Code } from 'lucide-vue-next'
-import profileImg from '@/assets/images/profilepic.png'
+import { Github, Linkedin, Mail, ArrowDown } from 'lucide-vue-next'
 
-const topSkills = ['Vue.js', 'React', 'TypeScript', 'Python', 'Node.js', 'TailwindCSS']
+const socialLinks = [
+  {
+    name: 'GitHub',
+    url: 'https://github.com/bunyaminbolukbas',
+    icon: Github
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/bunyaminbolukbas/',
+    icon: Linkedin
+  },
+  {
+    name: 'Email',
+    url: 'mailto:bbe-operations@outlook.com',
+    icon: Mail
+  }
+]
 </script>

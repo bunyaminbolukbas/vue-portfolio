@@ -1,11 +1,141 @@
-@import 'tailwindcss';
-@import '@fontsource/inter/index.css';
+<template>
+  <section
+    id="home"
+    class="relative flex items-center justify-center min-h-screen px-4 bg-animated-dark overflow-hidden"
+  >
+    <!-- Background Elements -->
+    <div class="absolute inset-0">
+      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-2xl"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-full blur-2xl"></div>
+    </div>
 
-html {
-  scroll-behavior: smooth;
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <!-- Main Content -->
+      <div class="animate-fade-in-up">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight px-4">
+          Hi, I'm 
+          <span class="text-gradient bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            Bünyamin
+          </span>
+        </h1>
+        
+        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-8 text-gray-300 px-4">
+          Frontend Web Developer
+        </h2>
+        
+        <p class="text-gray-400 text-base sm:text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed px-4">
+          Not your average developer — I specialize in building modern, responsive web applications. 
+          With a background in law and sales, I bring a unique perspective to everything I build.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 px-4">
+          <a
+            href="#projects"
+            class="btn-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full text-white font-semibold hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center gap-2"
+          >
+            View My Work
+            <ArrowDown class="w-5 h-5" />
+          </a>
+          <a
+            href="#contact"
+            class="px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-white/30 text-white font-semibold hover:bg-white/10 hover:border-white/50 transition-all duration-300 inline-flex items-center justify-center gap-2"
+          >
+            Get In Touch
+            <Mail class="w-5 h-5" />
+          </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex justify-center space-x-4 sm:space-x-6 px-4">
+          <a
+            v-for="social in socialLinks"
+            :key="social.name"
+            :href="social.url"
+            target="_blank"
+            class="group p-3 sm:p-4 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/10 transition-all duration-300 hover:scale-110"
+          >
+            <component :is="social.icon" class="w-5 h-5 sm:w-6 sm:h-6 text-white/70 group-hover:text-white transition-colors" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+          <div class="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup>
+import { Github, Linkedin, Mail, ArrowDown } from 'lucide-vue-next'
+
+const socialLinks = [
+  {
+    name: 'GitHub',
+    url: 'https://github.com/bunyaminbolukbas',
+    icon: Github
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/bunyaminbolukbas/',
+    icon: Linkedin
+  },
+  {
+    name: 'Email',
+    url: 'mailto:bbe-operations@outlook.com',
+    icon: Mail
+  }
+]
+</script>
+
+<style scoped>
+/* Custom animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-/* Custom animations */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes letterFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -48,18 +178,6 @@ html {
   }
 }
 
-@keyframes gradientBackground {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out;
 }
@@ -72,78 +190,65 @@ html {
   animation: fadeInRight 0.8s ease-out;
 }
 
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.8s ease-out;
+}
+
+.animate-letter-float {
+  animation: letterFloat 2s ease-in-out infinite;
+}
+
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
 
-.bg-animated-gradient {
-  background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
-  background-size: 400% 400%;
-  animation: gradientBackground 15s ease infinite;
-}
-
+/* Background animation */
 .bg-animated-dark {
-  background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #2a2a2a, #1a1a1a);
+  background: linear-gradient(-45deg, #0f0f23, #1a1a2e, #16213e, #0f0f23);
   background-size: 400% 400%;
-  animation: gradientBackground 15s ease infinite;
+  animation: gradientShift 15s ease infinite;
 }
 
-/* Glass morphism effect */
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.glass-dark {
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* Dark mode scrollbar */
-.dark ::-webkit-scrollbar-track {
-  background: #2a2a2a;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-  background: #555;
-}
-
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: #777;
-}
-
-/* Hover effects */
-.hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hover-lift:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.dark .hover-lift:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+.btn-primary:hover::before {
+  left: 100%;
 }
 
 /* Text gradient */
@@ -154,23 +259,34 @@ html {
   background-clip: text;
 }
 
-/* Button styles */
-.btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  transition: all 0.3s ease;
+/* Scroll animations */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+.scroll-animate.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Section dividers */
-.section-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+/* Letter animations */
+.letter-animate {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInUp 0.6s ease-out forwards;
 }
 
-.dark .section-divider {
-  background: linear-gradient(90deg, transparent, #374151, transparent);
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .hover-lift:hover {
+    transform: none;
+  }
+  
+  .animate-bounce {
+    animation-duration: 2s;
+  }
 }
+</style>
